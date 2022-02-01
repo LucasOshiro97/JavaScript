@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro passos com DOM</title>
+    <style>
+        body{
+            background: burlywood;
+            color:darkblue ;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique aqui</div>
+    <div name="txt">Neste aqui</div>
+    <div class="pll">Não tente nada por aqui</div>
+    <div id="ll">Resta ninguem!</div>
+    <script>
+        window.document.write(window.document.charset,'<br>')
+        window.document.write(window.navigator.appName,'<br>')
+        window.document.write(window.document.URL,'<br><br>')
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[1] //[0] foi colocado para pegar o primeiro tag <p> se quiser pegar o outro é só colocar [1]
+        window.document.write(p1.innerText)
+        p1.style.color = 'red'
+        corpo.style.background = 'white'
+        var d = window.document.getElementById('msg')
+        d.style.background = 'green'
+        var e = window.document.getElementsByName('txt')[0]
+        e.style.background = 'purple'
+        var p = window.document.getElementsByClassName('pll')[0]
+        p.style.background = 'pink' 
+        var f = window.document.querySelector('div#ll') 
+        f.style.background = 'brown'          
+    </script>
+</body>
+</html>

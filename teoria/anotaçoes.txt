@@ -1,0 +1,414 @@
+AULA 4
+
+Primeiro script
+
+window.alert('mensagem') - alerta, so tem a opçao de ok
+window.confirm('mensagem') - confirmação, tem a opçao de ok e cancelar
+window.prompt('mensagem') - tem opçao de digitar algo, ok e cancelar
+
+///////////////////////////////////////////////////////////////////////////////
+
+AULA 5
+
+Variaveis e tipos primitivos
+
+Comentarios
+// - serve so para uma unica linha
+/*   */ - serve para varias linhas
+= - recebe
+null - nula, sem nada
+
+Memoria - espaço grande aonde posso armazenar dados
+
+Variavel (var ou let) - serve para guardar varios tipos de dados
+
+Identificadores
+
+*Podem começar com letra, $ ou _
+*Não podem começar com números
+*É possivel usar acentos e simbolos
+*É possivel usar numeros ou letras
+*Não podem conter espaços
+*Não podem ser palavras reservadas, palavras que o JS usam como comandos
+
+> 3+2
+5
+> var nome = "Lucas"
+undefined
+> nome
+'Lucas'
+
+Dicas
+
+*Maiusculas e minusculas fazem diferença
+*Tente escolher nomes coerentes para as variaveis
+*Evite se tronar um `programador alfabeto´ ou um `programador contador´
+
+typeof (tipo de) - saber qual é o tipo do dado
+
+///////////////////////////////////////////////////////////////////////////////
+
+AULA 6
+
+Tratamento de dados
+
+ (number + number) para concatenaçao
+ (string + string) para adiçao
+
+window.prompt('') - retorna string
+
+Converçao
+
+String -> Numero
+
+Number.parseInt(n)
+Number.parseFloat(n)
+Number(n)
+
+Numero -> String
+
+String(n)
+n.toString()
+
+Template String - ${}, utilizar com crase
+
+s.length - diz o tamanho da string, quantas letras tem a string
+s.toUpperCase() - trasnforma as letras em 'MAIUSCULAS'
+s.toLowerCase() - Transforma as letras em 'minusculas'
+document.write() - escreve na parte do corpo do site
+document.write() - escreve na parte do corpo do site com quebra de linha
+
+Template Number
+
+n.toFixed(quantidade de casas) - quantidade de casas depois da virgula
+n.toFixed(quantidade de casas).replace('.',',') - trocar . por virgula
+n.toLocaleString('pr-BR',{style: 'currency',currency: 'BRL'}) - transformar para dinheiro
+
+////////////////////////////////////////////////////////////////////////////////
+
+AULA 7
+
+Operadores part.1					
+					
+Operadores aritmeticos					ordem de precedência
+5+2 = 7							()
+5-2 = 3							**
+5*2 = 10 						*,/,%+,-
+5/2 = 2.5						+,-
+5%2 = 1 (resto da divisao inteira)
+5**2 = 25 (potência)
+
+Auto-atribuiçoes simplificadas
+
+n=3
+n=n+4 -> n+=4
+n=n-5 -> n-=5	
+n=n*4 -> n*=4
+n=n/2 -> n/=2
+n=n** -> n**=2
+n=n%5 -> n%=5
+
+Operadores de incremento
+x=x+1 -> x++ ou ++x 
+x=x-1 -> x-- ou --x
+
+////////////////////////////////////////////////////////////////////////////////
+
+AULA 8
+
+Operadores part.2
+
+Operadores relacionais				Identidade
+Para saber se é true ou false			5==5 -> true
+> - sinal de maior				5=='5' -> true - o simbolo de igualdade nao testa o tipo
+< - sinal de menor				5==='5' -> false - identicos, mesmo valor e mesmo tipo
+>= - sinal de maior igual			5!='5' -> false
+<= - sinal de menor igual			5!=='5' -> desigual restrito
+== - sinal de igual
+!= - sinal de diferente
+
+Operadores logicos			exemplos:
+! - negação				idade>=15 &&<=17 -> a idade está entre 15 e 17
+&& - conjunçao(e)			estado=='RJ'' || estado=='SP' -> o estado é RJ ou SP?
+|| - disjunção(ou)			salário>1500 && sexo!= 'M' -> o salário é acima de 1500 e não é homem?
+
+Operadore ternário			exemplo:
+? : -> teste ? true : false		média<=7.0 ? "Aprovado" : "Reprovado"
+ 
+///////////////////////////////////////////////////////////////////////////////////
+
+AULA 9
+
+Introdução ao DOM
+
+DOM (Document Object Model) - modelo de objetos para documentos, conjunto de objetos dentro do 
+navegador que vai dar acesso aos componentes internos do website, não funciona dentro do node.js
+esta presente quando estou rodando javascript dentro do navegador
+
+Metodos de selecionar elementos
+
+Por Marca - getElementsByTagName(), seleciona todos que tiver o mesmo tag tipo <p> usado
+Por ID - getElementByid()
+Por Nome - getElementsByName()
+Por Classe - getElementsByClassName()
+PorSeletor - querySelector(), funciona como se fosse o id, para um objeto 
+	     querySelectorAll(), funciona como se fosse	no plural colocando []
+
+name e marca - sao mais utilizados quando tiver mais de um objeto
+id e seletos - somente um objeto
+classe - quando tiver uma classe de objeto 
+
+seletor - id, representado por # e class, representado por .
+
+innerText - pega o texto que esta dentro da tag sem oque estiver formatado dentro, como usado dentro da tag <p>
+innerHTML - pega o texto que esta dentro da tag e com tudo que foi formatado dentro
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+AULA 10
+
+Eventos DOM
+
+Evento - tudo aquilo que possa acontecer na tag, por exemplo utlizado na <div>
+
+evento de mouse
+mouseenter - quando mouse entra no quadrado da tag
+mousemove - quando tem movimento do mouse dentro do quadrado da tag
+mousedown - quando clica e segura com o mouse dentro do quadrado da tag
+mouseup - solta o clique do mouse de cima
+click - clicar e soltar sem segurar a tecla do mouse
+mouseout - mover para fora o mouse do quadrado da tag
+
+para ver mais eventos do javascript, só digitar no google 
+javascript dom events list e procurar Event reference | MDN
+
+Função - conjunto de código/linhas que vão ser executadas só quando o
+	evento ocorrer
+
+Exemplos de um modo diferente de colocar eventos
+
+<script>
+var a = window.document.getElementById ('area')
+
+a.addEventListener('click',clicar)
+a.addEventListener('mouseenter', entrar)
+a.addEventListener('mouseout', sair)
+
+</script>
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+AULA 11
+
+Condiçoes part.1
+
+Condiçao simples:			Condiçao composta:  
+
+if (condiçao){				if (condiçao){
+	bloco					bloco1
+}					} else {
+						bloco2
+					}
++= - serve tambem para ligar uma fase a outra que estao sepadas por comando
+
+//////////////////////////////////////////////////////////////////////////////////
+
+AULA 12
+
+Condiçoes part.2
+
+Condicao alinhada:				Codiçao múltipla: utilizado para valores fixos			
+
+if (condiçao1){					swicth (expressão){
+      bloco1						case valor1:
+  } else {						
+	if(condiçao2){					    break	
+	 bloco2					    	case valor2:
+	} else { 					    
+	    bloco3					    break	// serve para quando a expressao for satisfeita ele não prosseguir com o código  
+	}						case valor3:
+  }
+							    break
+							default:	// mesma lógica do else
+
+							    break
+						}
+Hora atual do sistema 					
+ 					
+var agora = new Date()					
+var hora = agora.getHours()
+
+este codigo serve para pegar outras coisas atuais no sistema
+ex: ano, dia, minutos, etc.
+  
+/////////////////////////////////////////////////////////////////////////////////
+
+AULA 12-c				
+
+Exercicio JavaScript part.3
+
+No input radio o name tem que ser igual nos dois para que você consiga
+escolher uma das opções que tem se forem diferentes as duas ja vao estar seleciondadas 
+e nao vai ter como selecionar
+
+No script, para fazer um codigo com essa varial que é igual usar  document.getElementsByName('nome da variavel)
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+AULA 13
+
+Repetiçoes part.1
+
+Primeiro testa para executar o bloco
+
+while (condiçao){ vai fazer quando a condiçao for verdadeira, enquanto ela for verdadeira ela vai ser repetida
+	bloco
+}
+
+Executa e depois testa
+
+do{
+	bloco
+} while (condiçao)
+
+
+SELECIONAR MAIS DE UMA LINHA CLICAR COM O MOUSE SEGURANDO O ALT
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+AULA 14
+
+Repetiçoes part.2
+
+For (inicio;teste;incremento){
+
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+AULA 14-b
+
+Exercício part.E
+
+para colocar emoji
+String.fromCodePoint(0x1F354); ou \u{1F354} -> tem que ser entre as crases
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+AULA 14-c
+
+Exercício part.F
+
+Para ter modo de selecionar o elemento basta seguir o codigo abaixo:
+
+Selection na parte HTML:
+
+<div>
+      <p> 
+          <select name="tabuada" id="tabu" size="10" >
+          <option >Digite um número acima</option>
+          </select>
+      </p> 
+ </div>
+
+Selection na parte javascript:
+
+ var tabu = window.document.getElementById('tab')
+ var tabua = window.document.getElementById('tabu')
+
+ tabua.innerHTML = ''         // Esta parte serve para quando quiser rodar o programa denovo ele vai fazer com que deixe tudo em branco denovo
+ for (var c=1;c<=10;c++){
+       var item = document.createElement('option')
+       var calc = c*t
+       item.text= `${t}x${c}=${calc}`
+       item.value = `tab${c}`
+       tabua.appendChild(item)
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+AULA 15
+
+Variáveis Compostas
+
+Variavel composta - uma variavel unica que consegue armazenar vários valores
+
+ex: vaga a = [valor1,valor2,valor3,...]
+		0      1      2     n
+Um array = um vetor = variavel composta, é uma variável que tem varios elementos, cada elementos é composto
+por seu valor e por uma chave de identificação
+
+let num = [5,8,4]
+num[3] = 6 -> vai acrescentar o valor 6 na linha 3, como vai ficar -> [5,8,4,6]
+num.push(7) -> vai acrescentar o valor 7 na ultima linha, como vai ficar -> [5,8,4,6,7]
+num.length -> com esse comando você vai conseguir saber comprimeto do array, para o exemplo de cima -> 5 elementos
+num.sort() -> pega os elementos e coloca eles em ordem crescente, como vai ficar -> [4,5,6,7,8]
+
+Uma maneira de usar o for que só funciona para arrays e objetos
+
+for (  in  ){
+
+}
+
+Ex:
+
+for (var pos in valores){
+    console.log(`A posição ${pos} tem o valor ${valores[pos]}`)
+}
+
+Buscar valores dentro do vetor
+
+num.indexOf() -> ex: [4,5,6,7,8] -> num.indexOf(7) ele vai buscar o valor 7 e pegar a sua posiçao que é 3
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+AULA 16
+
+Funções
+ 
+*São ações executadas assim que são chamadas ou em decorrência de algum evento
+*Uma função pode receber parâmetros e retornar um resultado
+
+Ex:
+ 	      //parametro
+function ação(param){
+		//ação	
+	   return 'res' -> retorno
+	} 
+}
+ação(11) -> chamada
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+AULA 16-ex part.2
+
+n.focus() -> deixar focado na caixa para entrada de valor em vez de quando quiser colocar
+o valor ter que com o mouse e clicar dentro 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+AULA 17
+
+Próximos passos
+
+Quais são?
+Continuar os estudos em functions(funções)
+Objetos
+Modularização
+RegEx (expressões regulares)
+JSON
+AJAX
+NodeJS
+
+Introdução para oque é objeto
+
+para declarar um objeto é atraves de chaves
+
+var amigo = {nome:'José',sexo:'M',peso:'85.4',engordar(p){}}
+	
+	Os objetos alem de guardar valores ele tambem pode guardar funcionalidade(metodos) como no caso de cima	
+
+Array
+
+var num = [5,8,4]
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
